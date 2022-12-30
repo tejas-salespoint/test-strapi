@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "groups",
+  "info": {
+    "singularName": "group",
+    "pluralName": "groups",
+    "displayName": "Group",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "text"
+    },
+    "channels": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::channel.channel",
+      "mappedBy": "group"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "image": {
+      "type": "json"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "delete",
+        "publish"
+      ],
+      "default": "publish"
+    }
+  }
+}

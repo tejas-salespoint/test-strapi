@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "channels",
+  "info": {
+    "singularName": "channel",
+    "pluralName": "channels",
+    "displayName": "channel",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "subtitle": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "text"
+    },
+    "group": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::group.group",
+      "inversedBy": "channels"
+    },
+    "videos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::video.video",
+      "mappedBy": "channel"
+    },
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "type": "json"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "delete",
+        "publish"
+      ],
+      "default": "publish"
+    }
+  }
+}

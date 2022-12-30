@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "videos",
+  "info": {
+    "singularName": "video",
+    "pluralName": "videos",
+    "displayName": "video",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "text"
+    },
+    "views": {
+      "type": "integer"
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "uid": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "insights": {
+      "type": "json"
+    },
+    "tags": {
+      "type": "json"
+    },
+    "time": {
+      "type": "string"
+    },
+    "videoId": {
+      "type": "string"
+    },
+    "thumbnail": {
+      "type": "json"
+    },
+    "channel": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::channel.channel",
+      "inversedBy": "videos"
+    },
+    "thumbnail_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "delete",
+        "publish"
+      ],
+      "default": "publish"
+    },
+    "duration": {
+      "type": "string"
+    }
+  }
+}

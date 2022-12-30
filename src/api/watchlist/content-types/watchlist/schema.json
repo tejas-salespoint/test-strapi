@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "watchlists",
+  "info": {
+    "singularName": "watchlist",
+    "pluralName": "watchlists",
+    "displayName": "Watchlist",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "watchlist"
+    },
+    "videos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::video.video"
+    }
+  }
+}
